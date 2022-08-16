@@ -7,12 +7,34 @@
 html,
 body {
   font-family: "Montserret", sans-serif;
+  color: var(--color-text)
 }
-:root{
-  --text-black: black;
-  --primary-color : #E11D74;
-  --imp-color: #C049A4;
-  --secondary-color : #B02058;
+:root {
+  /* light Color Theme Variable */
+  --color-text-light: #1b2430;
+  --color-background-light: #b2a4ff;
+  --color-green-light: #9ed2c6;
+  --color-orange-light: #F47C7C;
+  --color-blue-light: #92b4ec;
+
+  /* Dark Color Theme Variable */
+  --color-text-dark: #eeeeee;
+  --color-background-dark: #52057B;
+}
+
+.light-theme {
+  --color-text: var(--color-text-light);
+  --color-background: var(--color-background-light);
+  --color-orange: var(--color-orange-light);
+  --color-green: var(--color-green-light);
+  --color-blue: var(--color-blue-light);
+}
+.dark-theme {
+  --color-text: var(--color-text-dark);
+  --color-background: var(--color-background-dark);
+  --color-orange: var(--color-text-dark);
+  --color-green: var(--color-text-dark);
+  --color-blue: var(--color-text-dark);
 }
 /* Experience */
 .experience {
@@ -31,18 +53,135 @@ body {
   height: 100%;
   overflow: hidden;
 }
+.page-wrapper {
+  position: relative;
+}
+/* toogle ----------------------------- */
+.toggle-bar {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  top: 48px;
+  right: 48px;
+  z-index: 9999999999;
+}
+.sun-wrapper,
+.moon-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.toggle-button {
+  cursor: pointer;
+  position: relative;
+  width: 56px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-orange);
+  border-radius: 999px;
+  margin: 0px 16px;
+  border: none;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+.toggle-circle {
+  position: absolute;
+  border-radius: 50%;
+  left: 6px;
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-background);
+  transition: all 0.2s ease-in-out;
+}
+.toggle-button:hover .toggle-circle {
+  transform: scale(0.9);
+}
+.slide {
+  left: 28px;
+}
 /* section formatting */
-.section-margin{
+.section-margin {
   height: 3000px;
   width: 100%;
 }
-.section{
+.section {
   width: 50%;
   padding: 100px 4%;
-  background-color: var(--primary-color);
+  background-color: var(--color-background);
 }
-.page-wrapper {
+.left {
+  margin-right: auto;
+}
+
+.right {
+  margin-left: auto;
+}
+.section-intro-wrapper {
   position: relative;
+  padding: 20% 5%;
+  border-bottom: 2px solid var(--color-orange);
+  padding-bottom: 400px;
+}
+.section-heading {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.8;
+  margin-top: 64px;
+}
+.sction-text {
+  line-height: 2;
+  margin-top: 18px;
+  font-size: 16px;
+}
+
+/* decoration ------------------------------- */
+.section-title {
+  position: relative;
+  color: var(--secondary-color);
+}
+.section-title-text {
+  display: block;
+  font-size: 40px;
+  font-weight: 500;
+  transform-origin: left;
+  transform: skewY(25deg);
+  z-index: 5;
+  text-transform: uppercase;
+}
+
+.styleOne,
+.styleTwo,
+.styleThree {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 60px;
+  max-width: 278px;
+  border: 1px solid var(--color-orange);
+  transform-origin: left;
+  transform: skewY(-25deg);
+}
+.styleOne {
+  top: 0px;
+}
+.styleTwo {
+  top: 80px;
+}
+.styleThree {
+  top: 80px;
+  transform: skewY(25deg);
+  background-color: var(--color-orange);
+}
+.section-number {
+  position: absolute;
+  bottom: 15px;
+  right: 0;
+  color: var(--color-orange);
+  font-size: 24px;
 }
 /* hero section */
 .hero {
@@ -58,7 +197,7 @@ body {
 }
 .hero-main {
   position: absolute;
-  bottom: 168px;
+  bottom: 140px;
   left: 0;
 }
 .hero-second {
@@ -67,13 +206,14 @@ body {
   right: 0;
 }
 
-.hero-main-title{
+.hero-main-title {
   font-size: 64px;
+  font-weight: 700;
 }
-.hero-main-discriptiom{
+.hero-main-discriptiom {
   font-size: 18px;
 }
-.hero-second-subheading{
+.hero-second-subheading {
   font-size: 18px;
   text-transform: uppercase;
 }

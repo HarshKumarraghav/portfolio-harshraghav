@@ -1,6 +1,7 @@
 import Experience from "../Experience";
 import * as THREE from "three";
 import gsap from "gsap";
+import { RectAreaLightHelper } from "three/examples/jsm/helpers/RectAreaLightHelper";
 export default class Room {
   constructor() {
     this.experience = new Experience();
@@ -30,20 +31,73 @@ export default class Room {
         });
       }
     });
+    this.width = 0.1;
+    this.height = 2.5;
+    this.intensity = 10;
+    const rectLight = new THREE.RectAreaLight(
+      0xFFEE2F,
+      this.intensity,
+      this.width,
+      this.height
+    );
+    rectLight.position.set(-1.8, 5, -3);
+    rectLight.rotation.x = -Math.PI / 2;
+    rectLight.rotation.z = -Math.PI / 4;
+    this.actualRoom.add(rectLight);
+
+// second light
+
+    this.width = 2.5;
+    this.height = 0.1;
+    this.intensity = 10;
+    const rect2Light = new THREE.RectAreaLight(
+      0xFFEE2F,
+      this.intensity,
+      this.width,
+      this.height
+    );
+    rect2Light.position.set(2, 5, -3.1);
+    rect2Light.rotation.x = -Math.PI / 2;
+    rect2Light.rotation.z = -Math.PI / 4;
+
+    this.actualRoom.add(rect2Light);
     this.scene.add(this.actualRoom);
-    this.actualRoom.scale.set(.31, .31, .31);
+    this.actualRoom.scale.set(0.31, 0.31, 0.31);
+
+
+    // third Light
+
+    this.width = .7;
+    this.height = 1.3;
+    this.intensity = 2;
+    const rect3Light = new THREE.RectAreaLight(
+      0xFFEE2F,
+      this.intensity,
+      this.width,
+      this.height
+    );
+    rect3Light.position.set(-4.2, 1.7, -1 );
+    rect3Light.rotation.y = Math.PI / 4
+    // rect3Light.rotation.z = -Math.PI / 4;
+
+    this.actualRoom.add(rect3Light);
+    this.scene.add(this.actualRoom);
+    this.actualRoom.scale.set(0.31, 0.31, 0.31);
+
+
+//     const rectLightHelper = new RectAreaLightHelper( rect3Light );
+// rect3Light.add( rectLightHelper );
   }
-  // setAnimation(){
-  //   this.mixer = new THREE.AnimationMixer(this.actualRoom);
-  //   this.swim = this.mixer.clipAction(this.room.animations[0])
-  //   this.swim.play();
-  // }
+  
+
+  
+  
+
   onMouseMove() {
     window.addEventListener("mousemove", (e) => {
       this.rotation =
         (((e.clientX - window.innerWidth) / 2) * 2) / window.innerWidth;
       this.lerp.target = this.rotation * 0.1;
-      console.log(this.lerp.target);
     });
   }
   resize() {}
@@ -51,9 +105,9 @@ export default class Room {
     this.lerp.current = gsap.utils.interpolate(
       this.lerp.current,
       this.lerp.target,
-      this.lerp.ease,
-    )
-    this.actualRoom.rotation.y  = this.lerp.current;
+      this.lerp.ease
+    );
+    this.actualRoom.rotation.y = this.lerp.current;
     // this.mixer.update(this.time.delta * 0.00009)
   }
 }
