@@ -1,14 +1,79 @@
-*{
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-.experience{
+html,
+body {
+  font-family: "Montserret", sans-serif;
+}
+:root{
+  --text-black: black;
+  --primary-color : #E11D74;
+  --imp-color: #C049A4;
+  --secondary-color : #B02058;
+}
+/* Experience */
+.experience {
   position: fixed;
   width: 100vw;
   height: 100vh;
 }
-.experience-canvas{
+.experience-canvas {
   width: 100%;
   height: 100%;
+}
+/* page */
+.page {
+  z-index: 99999;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+/* section formatting */
+.section-margin{
+  height: 3000px;
+  width: 100%;
+}
+.section{
+  width: 50%;
+  padding: 100px 4%;
+  background-color: var(--primary-color);
+}
+.page-wrapper {
+  position: relative;
+}
+/* hero section */
+.hero {
+  width: 100vw;
+  height: 100vh;
+}
+.hero-wrapper {
+  position: relative;
+  height: 100%;
+  width: calc(100% - 160px);
+  margin: 0 auto;
+  max-width: 1100px;
+}
+.hero-main {
+  position: absolute;
+  bottom: 168px;
+  left: 0;
+}
+.hero-second {
+  position: absolute;
+  top: calc(50% - 120px);
+  right: 0;
+}
+
+.hero-main-title{
+  font-size: 64px;
+}
+.hero-main-discriptiom{
+  font-size: 18px;
+}
+.hero-second-subheading{
+  font-size: 18px;
+  text-transform: uppercase;
 }
