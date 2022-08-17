@@ -30,9 +30,11 @@ export default class Room {
           groupChild.receiveShadow = true;
         });
       }
+      console.log(child);
     });
+
     this.width = 0.1;
-    this.height = 2.5;
+    this.height = 5;
     this.intensity = 10;
     const rectLight = new THREE.RectAreaLight(
       0xFFEE2F,
@@ -78,7 +80,7 @@ export default class Room {
     );
     rect3Light.position.set(-4.2, 1.7, -1 );
     rect3Light.rotation.y = Math.PI / 4
-    // rect3Light.rotation.z = -Math.PI / 4;
+
 
     this.actualRoom.add(rect3Light);
     this.scene.add(this.actualRoom);

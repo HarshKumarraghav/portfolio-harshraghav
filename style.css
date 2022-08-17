@@ -1,4 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+@font-face {
+  font-family: BacktoSchool;
+  src: url(assets/Fonts/BackToSchoolPersonalUseRegular-w1xX2.ttf);
+}
+@font-face {
+  font-family: indian;
+  src: url(assets/Fonts/IndianPersonalUse-w1OPx.ttf);
+}
 * {
   margin: 0;
   padding: 0;
@@ -9,13 +17,20 @@ body {
   font-family: "Montserret", sans-serif;
   color: var(--color-text)
 }
+h1,
+section,
+p,
+span,
+svg{
+  transition: background-color 0.5s , color 0.5s;
+}
 :root {
   /* light Color Theme Variable */
   --color-text-light: #1b2430;
   --color-background-light: #b2a4ff;
-  --color-green-light: #9ed2c6;
+  --color-green-light: #00454A;
   --color-orange-light: #F47C7C;
-  --color-blue-light: #92b4ec;
+  --color-blue-light: #293A80;
 
   /* Dark Color Theme Variable */
   --color-text-dark: #eeeeee;
@@ -35,6 +50,25 @@ body {
   --color-orange: var(--color-text-dark);
   --color-green: var(--color-text-dark);
   --color-blue: var(--color-text-dark);
+}
+.blue-text{
+  color: var(--color-blue);
+}
+.blue-border{
+  border-color: var(--color-blue);
+}
+.blue-backgound{
+background-color: var(--color-blue);
+}
+
+.green-text{
+  color: var(--color-green);
+}
+.green-border{
+  border-color: var(--color-green);
+}
+.green-backgound{
+background-color: var(--color-green);
 }
 /* Experience */
 .experience {
@@ -109,16 +143,45 @@ body {
   width: 100%;
 }
 .section {
+  position: relative;
   width: 50%;
-  padding: 100px 4%;
+  padding: 1000px 4%;
   background-color: var(--color-background);
+  overflow: hidden;
 }
 .left {
   margin-right: auto;
+  border-top-right-radius: 700px  700px ;
+  border-bottom-right-radius: 0 0 ;
 }
 
 .right {
   margin-left: auto;
+  border-top-left-radius: 700px  700px ;
+  border-bottom-left-radius: 0 0 ;
+}
+.progress-wrapper{
+  height: 0;
+  width: 12px;
+  z-index: 9999;
+
+}
+.progress-bar-wrapper-left{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.progress-bar-wrapper-right{
+  position: absolute;
+  top: 0;
+  right: 0;
+} 
+.progress-bar{
+  height: 100vh;
+  width: 100%;
+  background-color: var(--color-orange);
+  transform-origin: top center;
+  transform: scaleY(1);
 }
 .section-intro-wrapper {
   position: relative;
@@ -141,16 +204,18 @@ body {
 /* decoration ------------------------------- */
 .section-title {
   position: relative;
-  color: var(--secondary-color);
+  color: var(--color-text)
 }
 .section-title-text {
   display: block;
-  font-size: 40px;
+  font-size: 60px;
   font-weight: 500;
   transform-origin: left;
   transform: skewY(25deg);
   z-index: 5;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
+  color: var(--color-orange);
+  font-family: indian;
 }
 
 .styleOne,
@@ -197,23 +262,61 @@ body {
 }
 .hero-main {
   position: absolute;
-  bottom: 140px;
+  bottom: 50px;
   left: 0;
 }
 .hero-second {
   position: absolute;
-  top: calc(50% - 120px);
+  top: calc(40% - 120px);
   right: 0;
 }
 
 .hero-main-title {
-  font-size: 64px;
-  font-weight: 700;
+  font-family: BacktoSchool;
+  font-size: 70px;
+  text-align: center;
+  /* font-weight: 700; */
 }
-.hero-main-discriptiom {
+.hero-main-discription {
   font-size: 18px;
 }
 .hero-second-subheading {
-  font-size: 18px;
+  font-size: 28px;
   text-transform: uppercase;
+  text-align: center;
+  
+}
+
+.blue-text{
+  color: var(--color-blue);
+}
+.blue-border{
+  border-color: var(--color-blue);
+}
+.blue-background{
+background-color: var(--color-blue);
+}
+
+.green-text{
+  color: var(--color-green);
+}
+.green-border{
+  border-color: var(--color-green);
+}
+.green-background{
+background-color: var(--color-green);
+}
+
+
+/* media Query */
+@media (max-width: 968px) {
+  .section{
+    width: 100%;
+  }
+  .progress-bar-wrapper-left{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: auto;
+  }
 }
