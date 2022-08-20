@@ -1,48 +1,49 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 @font-face {
   font-family: BacktoSchool;
-  src: url(assets/Fonts/BackToSchoolPersonalUseRegular-w1xX2.ttf);
+  src: url(assets/Fonts/CreamPeach.ttf);
 }
-@font-face {
-  font-family: indian;
-  src: url(assets/Fonts/IndianPersonalUse-w1OPx.ttf);
-}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+a{
+  text-decoration: none;
+}
+
 html,
 body {
   font-family: "Montserret", sans-serif;
-  color: var(--color-text)
+  color: var(--color-text);
 }
 h1,
 section,
 p,
 span,
-svg{
-  transition: background-color 0.5s , color 0.5s;
+svg {
+  transition: background-color 0.5s, color 0.5s;
 }
 :root {
   /* light Color Theme Variable */
   --color-text-light: #1b2430;
-  --color-background-light: #b2a4ff;
-  --color-green-light: #00454A;
-  --color-orange-light: #F47C7C;
-  --color-blue-light: #293A80;
+  --color-background-light: #a760ff;
+  --color-green-light: #446a46;
+  --color-orange-light: #fd5d5d;
+  --color-blue-light: #293a80;
 
   /* Dark Color Theme Variable */
-  --color-text-dark: #eeeeee;
-  --color-background-dark: #52057B;
+  --color-text-dark: #f2f2f2;
+  --color-background-dark: #52057b;
 }
 
 .light-theme {
   --color-text: var(--color-text-light);
   --color-background: var(--color-background-light);
-  --color-orange: var(--color-orange-light);
-  --color-green: var(--color-green-light);
-  --color-blue: var(--color-blue-light);
+  --color-orange: var(--color-text-dark);
+  --color-green: var(--color-text-dark);
+  --color-blue: var(--color-text-dark);
 }
 .dark-theme {
   --color-text: var(--color-text-dark);
@@ -51,24 +52,24 @@ svg{
   --color-green: var(--color-text-dark);
   --color-blue: var(--color-text-dark);
 }
-.blue-text{
+.blue-text {
   color: var(--color-blue);
 }
-.blue-border{
+.blue-border {
   border-color: var(--color-blue);
 }
-.blue-backgound{
-background-color: var(--color-blue);
+.blue-backgound {
+  background-color: var(--color-blue);
 }
 
-.green-text{
+.green-text {
   color: var(--color-green);
 }
-.green-border{
+.green-border {
   border-color: var(--color-green);
 }
-.green-backgound{
-background-color: var(--color-green);
+.green-backgound {
+  background-color: var(--color-green);
 }
 /* Experience */
 .experience {
@@ -84,7 +85,7 @@ background-color: var(--color-green);
 .page {
   z-index: 99999;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   overflow: hidden;
 }
 .page-wrapper {
@@ -151,32 +152,31 @@ background-color: var(--color-green);
 }
 .left {
   margin-right: auto;
-  border-top-right-radius: 700px  700px ;
-  border-bottom-right-radius: 0 0 ;
+  border-top-right-radius: 700px 700px;
+  border-bottom-right-radius: 0 0;
 }
 
 .right {
   margin-left: auto;
-  border-top-left-radius: 700px  700px ;
-  border-bottom-left-radius: 0 0 ;
+  border-top-left-radius: 700px 700px;
+  border-bottom-left-radius: 0 0;
 }
-.progress-wrapper{
+.progress-wrapper {
   height: 0;
   width: 12px;
   z-index: 9999;
-
 }
-.progress-bar-wrapper-left{
+.progress-bar-wrapper-left {
   position: absolute;
   top: 0;
   left: 0;
 }
-.progress-bar-wrapper-right{
+.progress-bar-wrapper-right {
   position: absolute;
   top: 0;
   right: 0;
-} 
-.progress-bar{
+}
+.progress-bar {
   height: 100vh;
   width: 100%;
   background-color: var(--color-orange);
@@ -190,21 +190,21 @@ background-color: var(--color-green);
   padding-bottom: 400px;
 }
 .section-heading {
-  font-size: 18px;
+  font-size: 28px;
   font-weight: 700;
   line-height: 1.8;
   margin-top: 64px;
 }
-.sction-text {
+.section-text {
   line-height: 2;
   margin-top: 18px;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 /* decoration ------------------------------- */
 .section-title {
   position: relative;
-  color: var(--color-text)
+  color: var(--color-text);
 }
 .section-title-text {
   display: block;
@@ -275,48 +275,169 @@ background-color: var(--color-green);
   font-family: BacktoSchool;
   font-size: 70px;
   text-align: center;
+  animation: 2s fadeIn;
+  animation-fill-mode: forwards;
+  transition: opacity 1.5s;
   /* font-weight: 700; */
 }
+
 .hero-main-discription {
-  font-size: 18px;
+  font-size: 22px;
+  animation: 3s fadeIn;
+  animation-fill-mode: backwards;
+  transition: opacity 2s;
+  font-family: BacktoSchool;
 }
+
 .hero-second-subheading {
   font-size: 28px;
   text-transform: uppercase;
   text-align: center;
-  
+  animation: 2s fadeIn;
+  animation-fill-mode: forwards;
+  transition: opacity 1.5s;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-.blue-text{
+.blue-text {
   color: var(--color-blue);
 }
-.blue-border{
+.blue-border {
   border-color: var(--color-blue);
 }
-.blue-background{
-background-color: var(--color-blue);
+.blue-background {
+  background-color: var(--color-blue);
 }
 
-.green-text{
+.green-text {
   color: var(--color-green);
 }
-.green-border{
+.green-border {
   border-color: var(--color-green);
 }
-.green-background{
-background-color: var(--color-green);
+.green-background {
+  background-color: var(--color-green);
 }
-
 
 /* media Query */
 @media (max-width: 968px) {
-  .section{
+  .section {
     width: 100%;
   }
-  .progress-bar-wrapper-left{
+  .progress-bar-wrapper-left {
     position: absolute;
     top: 0;
     right: 0;
     left: auto;
   }
+}
+
+.gif-style {
+  margin-top: 12px;
+  width: 100%;
+}
+.border-gif {
+  width: 100%;
+  border-radius: 15px;
+  border: 4px solid var(--color-background-dark);
+}
+
+
+
+/* social Icon */
+
+.social{
+width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.wrapper .button{
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  margin: 0 5px;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease-out;
+}
+.wrapper .button:hover{
+  width: 200px;
+}
+.wrapper .button .icon{
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  border-radius: 50px;
+  box-sizing: border-box;
+  line-height: 60px;
+  transition: all 0.3s ease-out;
+}
+.wrapper .button:nth-child(1):hover .icon{
+  background: #0077b5;
+}
+.wrapper .button:nth-child(2):hover .icon{
+  background: #1DA1F2;
+}
+.wrapper .button:nth-child(3):hover .icon{
+  background: #E1306C;
+}
+.wrapper .button:nth-child(4):hover .icon{
+  background: #333;
+}
+.wrapper .button:nth-child(5):hover .icon{
+  background: #ff0000;
+}
+.wrapper .button .icon i{
+  font-size: 25px;
+  line-height: 60px;
+  transition: all 0.3s ease-out;
+}
+.wrapper .button:hover .icon i{
+  color: #fff;
+}
+.wrapper .button span{
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 60px;
+  margin-left: 10px;
+  transition: all 0.3s ease-out;
+}
+.wrapper .button:nth-child(1) span{
+  color: #0077b5;
+}
+.wrapper .button:nth-child(2) span{
+  color: #1DA1F2;
+}
+.wrapper .button:nth-child(3) span{
+  color: #E1306C;
+}
+.wrapper .button:nth-child(4) span{
+  color: #333;
+}
+.wrapper .button:nth-child(5) span{
+  color: #ff0000;
+}
+
+
+
+
+
+
+.endtext{
+  margin-top: 20px;
+  font-size: 15px;
 }

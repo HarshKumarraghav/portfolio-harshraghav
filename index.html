@@ -1,177 +1,388 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Harsh's Portfolio</title>
-  </head>
-  <body class="light-theme">
-    <div class="experience">
-      <canvas class="experience-canvas"> </canvas>
-    </div>
-    <div class="page" asscroll-container>
-      <div class="toggle-bar">
-        <div class="sun-wrapper">
-          <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
-            <path
-              fill="currentColor"
-              d="M12 5q-.425 0-.712-.288Q11 4.425 11 4V2q0-.425.288-.713Q11.575 1 12 1t.713.287Q13 1.575 13 2v2q0 .425-.287.712Q12.425 5 12 5Zm4.95 2.05q-.275-.275-.275-.688 0-.412.275-.712l1.4-1.425q.3-.3.712-.3.413 0 .713.3.275.275.275.7 0 .425-.275.7L18.35 7.05q-.275.275-.7.275-.425 0-.7-.275ZM20 13q-.425 0-.712-.288Q19 12.425 19 12t.288-.713Q19.575 11 20 11h2q.425 0 .712.287.288.288.288.713t-.288.712Q22.425 13 22 13Zm-8 10q-.425 0-.712-.288Q11 22.425 11 22v-2q0-.425.288-.712Q11.575 19 12 19t.713.288Q13 19.575 13 20v2q0 .425-.287.712Q12.425 23 12 23ZM5.65 7.05l-1.425-1.4q-.3-.3-.3-.725t.3-.7q.275-.275.7-.275.425 0 .7.275L7.05 5.65q.275.275.275.7 0 .425-.275.7-.3.275-.7.275-.4 0-.7-.275Zm12.7 12.725-1.4-1.425q-.275-.3-.275-.712 0-.413.275-.688.275-.275.688-.275.412 0 .712.275l1.425 1.4q.3.275.287.7-.012.425-.287.725-.3.3-.725.3t-.7-.3ZM2 13q-.425 0-.712-.288Q1 12.425 1 12t.288-.713Q1.575 11 2 11h2q.425 0 .713.287Q5 11.575 5 12t-.287.712Q4.425 13 4 13Zm2.225 6.775q-.275-.275-.275-.7 0-.425.275-.7L5.65 16.95q.275-.275.688-.275.412 0 .712.275.3.3.3.713 0 .412-.3.712l-1.4 1.4q-.3.3-.725.3t-.7-.3ZM12 18q-2.5 0-4.25-1.75T6 12q0-2.5 1.75-4.25T12 6q2.5 0 4.25 1.75T18 12q0 2.5-1.75 4.25T12 18Zm0-2q1.65 0 2.825-1.175Q16 13.65 16 12q0-1.65-1.175-2.825Q13.65 8 12 8q-1.65 0-2.825 1.175Q8 10.35 8 12q0 1.65 1.175 2.825Q10.35 16 12 16Z"
-            />
-          </svg>
-        </div>
-        <button class="toggle-button"><div class="toggle-circle"></div></button>
-        <div class="moon-wrapper">
-          <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
-            <path
-              fill="currentColor"
-              d="M12 21q-3.75 0-6.375-2.625T3 12q0-3.75 2.625-6.375T12 3q.35 0 .688.025.337.025.662.075-1.025.725-1.637 1.887Q11.1 6.15 11.1 7.5q0 2.25 1.575 3.825Q14.25 12.9 16.5 12.9q1.375 0 2.525-.613 1.15-.612 1.875-1.637.05.325.075.662Q21 11.65 21 12q0 3.75-2.625 6.375T12 21Zm0-2q2.2 0 3.95-1.212 1.75-1.213 2.55-3.163-.5.125-1 .2-.5.075-1 .075-3.075 0-5.238-2.162Q9.1 10.575 9.1 7.5q0-.5.075-1t.2-1q-1.95.8-3.162 2.55Q5 9.8 5 12q0 2.9 2.05 4.95Q9.1 19 12 19Zm-.25-6.75Z"
-            />
-          </svg>
-        </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harsh's Portfolio</title>
+</head>
+
+<body class="light-theme">
+  <div class="experience">
+    <canvas class="experience-canvas"> </canvas>
+  </div>
+  <div class="page" asscroll-container>
+    <div class="toggle-bar">
+      <div class="sun-wrapper">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+          <path fill="currentColor"
+            d="M12 5q-.425 0-.712-.288Q11 4.425 11 4V2q0-.425.288-.713Q11.575 1 12 1t.713.287Q13 1.575 13 2v2q0 .425-.287.712Q12.425 5 12 5Zm4.95 2.05q-.275-.275-.275-.688 0-.412.275-.712l1.4-1.425q.3-.3.712-.3.413 0 .713.3.275.275.275.7 0 .425-.275.7L18.35 7.05q-.275.275-.7.275-.425 0-.7-.275ZM20 13q-.425 0-.712-.288Q19 12.425 19 12t.288-.713Q19.575 11 20 11h2q.425 0 .712.287.288.288.288.713t-.288.712Q22.425 13 22 13Zm-8 10q-.425 0-.712-.288Q11 22.425 11 22v-2q0-.425.288-.712Q11.575 19 12 19t.713.288Q13 19.575 13 20v2q0 .425-.287.712Q12.425 23 12 23ZM5.65 7.05l-1.425-1.4q-.3-.3-.3-.725t.3-.7q.275-.275.7-.275.425 0 .7.275L7.05 5.65q.275.275.275.7 0 .425-.275.7-.3.275-.7.275-.4 0-.7-.275Zm12.7 12.725-1.4-1.425q-.275-.3-.275-.712 0-.413.275-.688.275-.275.688-.275.412 0 .712.275l1.425 1.4q.3.275.287.7-.012.425-.287.725-.3.3-.725.3t-.7-.3ZM2 13q-.425 0-.712-.288Q1 12.425 1 12t.288-.713Q1.575 11 2 11h2q.425 0 .713.287Q5 11.575 5 12t-.287.712Q4.425 13 4 13Zm2.225 6.775q-.275-.275-.275-.7 0-.425.275-.7L5.65 16.95q.275-.275.688-.275.412 0 .712.275.3.3.3.713 0 .412-.3.712l-1.4 1.4q-.3.3-.725.3t-.7-.3ZM12 18q-2.5 0-4.25-1.75T6 12q0-2.5 1.75-4.25T12 6q2.5 0 4.25 1.75T18 12q0 2.5-1.75 4.25T12 18Zm0-2q1.65 0 2.825-1.175Q16 13.65 16 12q0-1.65-1.175-2.825Q13.65 8 12 8q-1.65 0-2.825 1.175Q8 10.35 8 12q0 1.65 1.175 2.825Q10.35 16 12 16Z" />
+        </svg>
       </div>
-
-      <div class="page-wrapper" asscroll>
-        <section class="hero">
-          <div class="hero-wrapper">
-            <div class="hero-main">
-              <p class="hero-main-title">Harsh Raghav</p>
-              <p class="hero-main-discription">Software Developer | Web</p>
-            </div>
-            <div class="hero-second">
-              <p class="hero-second-subheading">HarshRaghav</p>
-              <p class="hero-second-subheading">Portfolio</p>
-            </div>
-          </div>
-        </section>
-        <div class="first-move section-margin"></div>
-        <section class="first-section section left">
-          <div class="progress-wrapper progress-bar-wrapper-left">
-            <div class="progress-bar"></div>
-          </div>
-          
-          <div class="section-intro-wrapper">
-            <h1 class="section-title">
-              <span class="section-title-text">About Me</span>
-              <div class="section-title-decoration styleOne"></div>
-              <div class="section-title-decoration styleTwo"></div>
-              <div class="section-title-decoration styleThree"></div>
-            </h1>
-            <span class="section-number">01</span>
-          </div>
-
-          <div class="section-detail-wrapper">
-            <h3 class="section-heading">hello world</h3>
-            <p class="section-text">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Repellendus quasi ad, sit minima labore pariatur! Nisi eaque
-              voluptatem similique possimus ad pariatur quam soluta. Ipsam porro
-              debitis labore quasi delectus.
-            </p>
-            <h3 class="section-heading">hello world</h3>
-            <p class="section-text">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Repellendus quasi ad, sit minima labore pariatur! Nisi eaque
-              voluptatem similique possimus ad pariatur quam soluta. Ipsam porro
-              debitis labore quasi delectus.
-            </p>
-            <h3 class="section-heading">hello world</h3>
-            <p class="section-text">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Repellendus quasi ad, sit minima labore pariatur! Nisi eaque
-              voluptatem similique possimus ad pariatur quam soluta. Ipsam porro
-              debitis labore quasi delectus.
-            </p>
-          </div>
-        </section>
-        <div class="second-move section-margin"></div>
-        <section class="third-section section right">
-          <div class="progress-wrapper progress-bar-wrapper-right">
-            <div class="progress-bar blue-background">
-            </div>
-          </div>
-          
-          <div class="section-intro-wrapper blue-text blue-border">
-            <h1 class="section-title blue-text">
-              <span class="section-title-text blue-text">My Work</span>
-              <div class="section-title-decoration styleOne blue-border"></div>
-              <div class="section-title-decoration styleTwo blue-border"></div>
-              <div
-                class="section-title-decoration styleThree blue-background blue-border"
-              ></div>
-            </h1>
-            <span class="section-number blue-text">02</span>
-          </div>
-
-          <div class="section-detail-wrapper">
-            <h3 class="section-heading">hello world</h3>
-            <p class="section-text">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Repellendus quasi ad, sit minima labore pariatur! Nisi eaque
-              voluptatem similique possimus ad pariatur quam soluta. Ipsam porro
-              debitis labore quasi delectus.
-            </p>
-            <h3 class="section-heading">hello world</h3>
-            <p class="section-text">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Repellendus quasi ad, sit minima labore pariatur! Nisi eaque
-              voluptatem similique possimus ad pariatur quam soluta. Ipsam porro
-              debitis labore quasi delectus.
-            </p>
-            <h3 class="section-heading">hello world</h3>
-            <p class="section-text">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Repellendus quasi ad, sit minima labore pariatur! Nisi eaque
-              voluptatem similique possimus ad pariatur quam soluta. Ipsam porro
-              debitis labore quasi delectus.
-            </p>
-          </div>
-        </section>
-        <div class="third-move section-margin"></div>
-        <section class="third-section section left">
-          <div class="progress-wrapper progress-bar-wrapper-left">
-            <div class="progress-bar green-background">
-            </div>
-          </div>
-
-          <div class="section-intro-wrapper green-text green-border">
-            <h1 class="section-title green-text">
-              <span class="section-title-text green-text">Contact Me</span>
-              <div class="section-title-decoration styleOne green-border"></div>
-              <div class="section-title-decoration styleTwo green-border"></div>
-              <div
-                class="section-title-decoration styleThree green-background green-border"
-              ></div>
-            </h1>
-            <span class="section-number green-text">03</span>
-          </div>
-
-          <div class="section-detail-wrapper">
-            <h3 class="section-heading">hello world</h3>
-            <p class="section-text">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Repellendus quasi ad, sit minima labore pariatur! Nisi eaque
-              voluptatem similique possimus ad pariatur quam soluta. Ipsam porro
-              debitis labore quasi delectus.
-            </p>
-            <h3 class="section-heading">hello world</h3>
-            <p class="section-text">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Repellendus quasi ad, sit minima labore pariatur! Nisi eaque
-              voluptatem similique possimus ad pariatur quam soluta. Ipsam porro
-              debitis labore quasi delectus.
-            </p>
-            <h3 class="section-heading">hello world</h3>
-            <p class="section-text">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Repellendus quasi ad, sit minima labore pariatur! Nisi eaque
-              voluptatem similique possimus ad pariatur quam soluta. Ipsam porro
-              debitis labore quasi delectus.
-            </p>
-          </div>
-        </section>
+      <button class="toggle-button">
+        <div class="toggle-circle"></div>
+      </button>
+      <div class="moon-wrapper">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+          <path fill="currentColor"
+            d="M12 21q-3.75 0-6.375-2.625T3 12q0-3.75 2.625-6.375T12 3q.35 0 .688.025.337.025.662.075-1.025.725-1.637 1.887Q11.1 6.15 11.1 7.5q0 2.25 1.575 3.825Q14.25 12.9 16.5 12.9q1.375 0 2.525-.613 1.15-.612 1.875-1.637.05.325.075.662Q21 11.65 21 12q0 3.75-2.625 6.375T12 21Zm0-2q2.2 0 3.95-1.212 1.75-1.213 2.55-3.163-.5.125-1 .2-.5.075-1 .075-3.075 0-5.238-2.162Q9.1 10.575 9.1 7.5q0-.5.075-1t.2-1q-1.95.8-3.162 2.55Q5 9.8 5 12q0 2.9 2.05 4.95Q9.1 19 12 19Zm-.25-6.75Z" />
+        </svg>
       </div>
     </div>
-    <script type="module" src="/main.js"></script>
-  </body>
+
+    <div class="page-wrapper" asscroll>
+      <section class="hero">
+        <div class="hero-wrapper">
+          <div class="hero-main">
+            <p class="hero-main-title">Harsh Raghav</p>
+            <p class="hero-main-discription">Software Developer | Web</p>
+          </div>
+          <div class="hero-second">
+            <p class="hero-second-subheading">HarshRaghav</p>
+            <p class="hero-second-subheading">Portfolio</p>
+          </div>
+        </div>
+      </section>
+      <div class="first-move section-margin"></div>
+      <section class="first-section section left">
+        <div class="progress-wrapper progress-bar-wrapper-left">
+          <div class="progress-bar"></div>
+        </div>
+
+        <div class="section-intro-wrapper">
+          <h1 class="section-title">
+            <span class="section-title-text">About Me</span>
+            <div class="section-title-decoration styleOne"></div>
+            <div class="section-title-decoration styleTwo"></div>
+            <div class="section-title-decoration styleThree"></div>
+          </h1>
+          <span class="section-number">01</span>
+        </div>
+
+        <div class="section-detail-wrapper">
+          <h3 class="section-heading" align="center"></h3>
+          <div style="width: 100%; height: 12px"></div>
+          <div class="section-text">
+            <p> I'm working as a Front-end developer Intern at Bots Fusion AI ( A fastest growing chatbot platform as it
+              automates the tedious task of building and deploying a chatbot.) </p>
+
+            <p>I'm in my Third year as an Information Technology graduate skilled in Front-end Development, C++, and
+              Video Editing. Strong media and communication professional with a Bachelor's degree focused in Information
+              Technology from Gautam Buddha University.</p>
+          </div>
+
+          <div style="width: 100%; height: 12px"></div>
+          <p class="section-text">
+          <ul class="section-text">
+            <li>🌍 I'm based in Delhi</li>
+            <li>🚀 I'm currently working at Bots Fusion AI</li>
+            <li>🧠 I'm learning Next.js and React native</li>
+          </ul>
+          </p>
+          <h3 class="section-heading" align="center">SKILLS</h3>
+          <hr>
+          <h3 style="margin-top: 22px;">📚 Frameworks, Platforms and Libraries</h3>
+          <div class="section-text">
+            <div style="width: 100%; height: 12px"></div>
+            <a href="https://reactjs.org/" target="_blank" rel="noreferrer"><img
+                src="https://img.shields.io/badge/React-61DAFB.svg?style=for-the-badge&logo=React&logoColor=black"
+                width="100" height="36" alt="reactjs" /></a>
+            <a href="https://nextjs.org/docs" target="_blank" rel="noreferrer"><img
+                src="https://img.shields.io/badge/Next.js-000000.svg?style=for-the-badge&logo=nextdotjs&logoColor=white"
+                width="120" height="36" alt="NextJs" /></a>
+            <a href="https://expressjs.com/" target="_blank" rel="noreferrer"><img
+                src="https://img.shields.io/badge/Express-000000.svg?style=for-the-badge&logo=Express&logoColor=white"
+                width="130" height="36" alt="Express" /></a>
+            <a href="https://nodejs.org/en/" target="_blank" rel="noreferrer"><img
+                src="https://img.shields.io/badge/Node.js-339933.svg?style=for-the-badge&logo=nodedotjs&logoColor=white"
+                width="100" height="36" alt="NodeJS" /></a>
+            <a href="https://socket.io/" target="_blank" rel="noreferrer"><img
+                src="https://img.shields.io/badge/Socket.io-black?style=for-the-badge&logo=socket.io&badgeColor=010101"
+                width="120" height="36" alt="socket.io" /></a>
+            <a href="https://vitejs.dev/" target="_blank" rel="noreferrer"><img
+                src="https://img.shields.io/badge/Vite-646CFF.svg?style=for-the-badge&logo=Vite&logoColor=white"
+                width="100" height="36" alt="vite.js" /></a>
+            <a href="https://threejs.org/" target="_blank" rel="noreferrer"><img
+                src="https://img.shields.io/badge/Three.js-000000.svg?style=for-the-badge&logo=threedotjs&logoColor=white"
+                width="100" height="36" alt="three.js" /></a>
+            <a href="https://flutter.dev/" target="_blank" rel="noreferrer"><img
+                src="https://img.shields.io/badge/Flutter-02569B.svg?style=for-the-badge&logo=Flutter&logoColor=white"
+                width="100" height="36" alt="Flutter" /></a>
+            <a href="https://redux.js.org/" target="_blank" rel="noreferrer"><img
+                src="https://img.shields.io/badge/Redux-764ABC.svg?style=for-the-badge&logo=Redux&logoColor=white"
+                width="100" height="36" alt="Redux" /></a>
+            <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer"><img
+                src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white"
+                width="150" height="36" alt="TailwindCSS" /></a>
+            <a href="https://getbootstrap.com/" target="_blank" rel="noreferrer"><img
+                src="https://img.shields.io/badge/Bootstrap-7952B3.svg?style=for-the-badge&logo=Bootstrap&logoColor=white"
+                width="100" height="36" alt="Bootstrap" /></a>
+            <a href="https://mui.com/" target="_blank" rel="noreferrer"><img
+                src="https://img.shields.io/badge/MUI-007FFF.svg?style=for-the-badge&logo=MUI&logoColor=white"
+                width="100" height="36" alt="Material UI" /></a>
+            <a href="https://ant.design/" target="_blank" rel="noreferrer"><img
+                src="https://img.shields.io/badge/Ant%20Design-0170FE.svg?style=for-the-badge&logo=Ant-Design&logoColor=white"
+                width="150" height="36" alt="ant-design" /></a>
+          </div>
+          <div style="width: 100%; height: 30px"></div>
+          <h3>📋 Languages</h3>
+          <div class="section-text">
+            <div style="width: 100%; height: 12px"></div>
+            <a href="https://docs.microsoft.com/en-us/cpp/?view=msvc-170" target="_blank" rel="noreferrer"><img
+                src="https://img.shields.io/badge/C-000000.svg?style=for-the-badge&logo=C&logoColor=white" width="60"
+                height="36" alt="C" /></a>
+            <a href="https://docs.microsoft.com/en-us/cpp/?view=msvc-170" target="_blank" rel="noreferrer"><img
+                src="https://img.shields.io/badge/C++-00599C.svg?style=for-the-badge&logo=C++&logoColor=white"
+                width="70" height="36" alt="C++" /></a>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"><img
+                src="https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=for-the-badge&logo=JavaScript&logoColor=black"
+                width="150" height="36" alt="JavaScript" /></a>
+            <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"><img
+                src="https://img.shields.io/badge/TypeScript-3178C6.svg?style=for-the-badge&logo=TypeScript&logoColor=white"
+                width="150" height="36" alt="TypeScript" /></a>
+            <a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML5" target="_blank" rel="noreferrer"><img
+                src="https://img.shields.io/badge/HTML5-E34F26.svg?style=for-the-badge&logo=HTML5&logoColor=white"
+                width="100" height="36" alt="HTML5" /></a>
+            <a href="https://www.w3.org/TR/CSS/#css" target="_blank" rel="noreferrer"><img
+                src="https://img.shields.io/badge/CSS3-1572B6.svg?style=for-the-badge&logo=CSS3&logoColor=white"
+                width="100" height="36" alt="CSS3" /></a>
+            <a href="https://dart.dev/" target="_blank" rel="noreferrer"><img
+                src="https://img.shields.io/badge/Dart-0175C2.svg?style=for-the-badge&logo=Dart&logoColor=white"
+                width="100" height="36" alt="Dart" /></a>
+          </div>
+          <div style="width: 100%; height: 30px"></div>
+          <h3>💾 Databases</h3>
+          <div class="section-text">
+            <div style="width: 100%; height: 12px"></div>
+            <a href="https://firebase.google.com/" target="_blank" rel="noreferrer"><img
+                src="https://img.shields.io/badge/Firebase-FFCA28.svg?style=for-the-badge&logo=Firebase&logoColor=black"
+                width="150" height="36" alt="Firebase" /></a>
+            <a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"><img
+                src="https://img.shields.io/badge/MongoDB-47A248.svg?style=for-the-badge&logo=MongoDB&logoColor=white"
+                width="120" height="36" alt="MongoDB" /></a>
+          </div>
+          <div style="width: 100%; height: 30px"></div>
+          <h3>☁️ Hosting/SaaS</h3>
+          <div class="section-text">
+            <div style="width: 100%; height: 12px"></div>
+            <a href="https://www.heroku.com/" target="_blank" rel="noreferrer"><img
+                src="https://img.shields.io/badge/Heroku-430098.svg?style=for-the-badge&logo=Heroku&logoColor=white"
+                width="120" height="36" alt="Heroku" /></a>
+            <a href="https://www.netlify.com/" target="_blank" rel="noreferrer"><img
+                src="https://img.shields.io/badge/Netlify-00C7B7.svg?style=for-the-badge&logo=Netlify&logoColor=white"
+                width="130" height="36" alt="netlify" /></a>
+            <a href="https://vercel.com/" target="_blank" rel="noreferrer"><img
+                src="https://img.shields.io/badge/Vercel-000000.svg?style=for-the-badge&logo=Vercel&logoColor=white"
+                width="120" height="36" alt="vercel" /></a>
+          </div>
+          <div style="width: 100%; height: 30px"></div>
+          <h3>🎨 Design</h3>
+          <div class="section-text">
+            <div style="width: 100%; height: 12px"></div>
+            <a href="https://www.blender.org/" target="_blank" rel="noreferrer"><img
+                src="https://img.shields.io/badge/blender-%23F5792A.svg?style=for-the-badge&logo=blender&logoColor=white"
+                width="120" height="36" alt="blender" /></a>
+            <a href="https://www.figma.com/" target="_blank" rel="noreferrer"><img
+                src="https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white"
+                width="110" height="36" alt="Figma" /></a>
+            <a href="https://www.framer.com/" target="_blank" rel="noreferrer"><img
+                src="https://img.shields.io/badge/Framer-0055FF.svg?style=for-the-badge&logo=Framer&logoColor=white"
+                width="110" height="36" alt="Framer" /></a>
+          </div>
+          <div style="width: 100%; height: 30px"></div>
+          <h3>💻 IDEs/Editors</h3>
+          <div class="section-text">
+            <div style="width: 100%; height: 12px"></div>
+            <a href="https://code.visualstudio.com/" target="_blank" rel="noreferrer"><img
+                src="https://img.shields.io/badge/Visual%20Studio%20Code-007ACC.svg?style=for-the-badge&logo=Visual-Studio-Code&logoColor=white"
+                width="150" height="36" alt="visual-studio-code" /></a>
+            <a href="https://developer.apple.com/xcode/" target="_blank" rel="noreferrer"><img
+                src="https://img.shields.io/badge/Xcode-147EFB.svg?style=for-the-badge&logo=Xcode&logoColor=white"
+                width="100" height="36" alt="xcode" /></a>
+          </div>
+        </div>
+      </section>
+      <div class="second-move section-margin"></div>
+      <section class="third-section section right">
+        <div class="progress-wrapper progress-bar-wrapper-right">
+          <div class="progress-bar blue-background"></div>
+        </div>
+
+        <div class="section-intro-wrapper blue-text blue-border">
+          <h1 class="section-title blue-text">
+            <span class="section-title-text blue-text">My Work</span>
+            <div class="section-title-decoration styleOne blue-border"></div>
+            <div class="section-title-decoration styleTwo blue-border"></div>
+            <div class="section-title-decoration styleThree blue-background blue-border"></div>
+          </h1>
+          <span class="section-number blue-text">02</span>
+        </div>
+
+        <div class="section-detail-wrapper">
+          <h3 class="section-heading">1.Periodically - The Periodic Table</h3>
+          <div class="section-text">
+            <p> In Periodically web application you will find a huge amount of data about chemical elements for free.
+              You
+              will learn a lot of new and useful for yourself, no matter you are a schoolboy, student, engineer,
+              housewife
+              or a person of any other provisions that does not have a refresher to Chemistry.</p>
+
+            <p>
+              The chemistry falls into to number of the most important sciences and is one of the main school obiects.
+              Its
+              studying begins with the Periodic Table. Interactive approach to a training material is more effective
+              than
+              classical. As in it technologies which became the family for the modern pupils are used.</p>
+            <div class="gif-style">
+              <img src="./assets//Image/Periodically-poster.gif" alt="" class="border-gif">
+            </div>
+            <h3 align="center">TECH USED</h3>
+            <div style="margin-top: 12px;">
+              <div style="width: 100%; height: 12px"></div>
+              <a href="https://reactjs.org/" target="_blank" rel="noreferrer"><img
+                  src="https://img.shields.io/badge/React-61DAFB.svg?style=for-the-badge&logo=React&logoColor=black"
+                  width="100" height="36" alt="reactjs" /></a>
+              <a href="https://nextjs.org/docs" target="_blank" rel="noreferrer"><img
+                  src="https://img.shields.io/badge/Next.js-000000.svg?style=for-the-badge&logo=nextdotjs&logoColor=white"
+                  width="120" height="36" alt="NextJs" /></a>
+              <a href="https://expressjs.com/" target="_blank" rel="noreferrer"><img
+                  src="https://img.shields.io/badge/Express-000000.svg?style=for-the-badge&logo=Express&logoColor=white"
+                  width="130" height="36" alt="Express" /></a>
+              <a href="https://nodejs.org/en/" target="_blank" rel="noreferrer"><img
+                  src="https://img.shields.io/badge/Node.js-339933.svg?style=for-the-badge&logo=nodedotjs&logoColor=white"
+                  width="100" height="36" alt="NodeJS" /></a>
+              <a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"><img
+                  src="https://img.shields.io/badge/MongoDB-47A248.svg?style=for-the-badge&logo=MongoDB&logoColor=white"
+                  width="120" height="36" alt="MongoDB" /></a>
+              <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer"><img
+                  src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white"
+                  width="150" height="36" alt="TailwindCSS" /></a>
+              <a href="https://mui.com/" target="_blank" rel="noreferrer"><img
+                  src="https://img.shields.io/badge/MUI-007FFF.svg?style=for-the-badge&logo=MUI&logoColor=white"
+                  width="100" height="36" alt="Material UI" /></a>
+
+            </div>
+          </div>
+          <hr>
+          <h3 class="section-heading">2. Harsh Raghav-Portfolio</h3>
+          <div class="section-text">
+            <P> Modern 3D and interactive take on the classic personal portfolio. Built using
+              Javascript, and Three js, this in-browser experience - optimized for all mobile
+              and desktop devices - allows me to showcase everything in a way that is fun and interactive. All 3D
+              models were built in Blender.</P>
+            <div class="gif-style">
+              <img src="./assets/Image/portfolio.png" alt="" class="border-gif">
+            </div>
+            <h3 align="center">TECH USED</h3>
+            <div style="margin-top: 12px;">
+              <a href="https://www.blender.org/" target="_blank" rel="noreferrer"><img
+                  src="https://img.shields.io/badge/blender-%23F5792A.svg?style=for-the-badge&logo=blender&logoColor=white"
+                  width="120" height="36" alt="blender" /></a>
+              <a href="https://threejs.org/" target="_blank" rel="noreferrer"><img
+                  src="https://img.shields.io/badge/Three.js-000000.svg?style=for-the-badge&logo=threedotjs&logoColor=white"
+                  width="100" height="36" alt="three.js" /></a>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"><img
+                  src="https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=for-the-badge&logo=JavaScript&logoColor=black"
+                  width="150" height="36" alt="JavaScript" /></a>
+            </div>
+          </div>
+          <hr>
+          <h3 class="section-heading">Cryptoverse</h3>
+          <div class="section-text">
+            <p> Cryptoverse is a web application that displays the latest updates about the top 100 cryptocurrencies
+              like their current price, latest news, profit, etc. One can also search for any crypto and get information
+              about a particular currency.</p>
+            <p>Cryptoverse is a fully responsive web application that performs State Management using Redux Toolkit, UI
+              Creation using Ant Design, creating charts using Chart.js, and fetching data from multiple sources using
+              RapidAPI.
+            </p>
+            <div class="gif-style">
+              <img src="./assets/Image/cryptoverse.png" alt="" class="border-gif">
+            </div>
+            <h3 align="center">TECH USED</h3>
+            <div style="margin-top: 12px;">
+              <div style="width: 100%; height: 12px"></div>
+              <a href="https://reactjs.org/" target="_blank" rel="noreferrer"><img
+                  src="https://img.shields.io/badge/React-61DAFB.svg?style=for-the-badge&logo=React&logoColor=black"
+                  width="100" height="36" alt="reactjs" /></a>
+              <a href="https://redux.js.org/" target="_blank" rel="noreferrer"><img
+                  src="https://img.shields.io/badge/Redux-764ABC.svg?style=for-the-badge&logo=Redux&logoColor=white"
+                  width="100" height="36" alt="Redux" /></a>
+              <a href="https://ant.design/" target="_blank" rel="noreferrer"><img
+                  src="https://img.shields.io/badge/Ant%20Design-0170FE.svg?style=for-the-badge&logo=Ant-Design&logoColor=white"
+                  width="150" height="36" alt="ant-design" /></a>
+
+            </div>
+          </div>
+          <hr>
+        </div>
+      </section>
+      <div class="third-move section-margin"></div>
+      <section class="third-section section left">
+        <div class="progress-wrapper progress-bar-wrapper-left">
+          <div class="progress-bar green-background"></div>
+        </div>
+
+        <div class="section-intro-wrapper green-text green-border">
+          <h1 class="section-title green-text">
+            <span class="section-title-text green-text">Contact Me</span>
+            <div class="section-title-decoration styleOne green-border"></div>
+            <div class="section-title-decoration styleTwo green-border"></div>
+            <div class="section-title-decoration styleThree green-background green-border"></div>
+          </h1>
+          <span class="section-number green-text">03</span>
+        </div>
+
+        <div class="section-detail-wrapper">
+          <h3 class="section-heading" align="center">SOCIAL</h3>
+          <div class="section-text social">
+            <div class="wrapper">
+              <a href="https://www.linkedin.com/in/harsh-kumar-raghav-7285311b9/" target="_blank" class="button">
+                <div class="icon">
+                  <i class="fa fa-linkedin"></i>
+                </div>
+                <span>Linkedin</span>
+              </a>
+              <a href="https://twitter.com/_Harsh_raghav_" target="_blank" class="button">
+                <div class="icon">
+                  <i class="fab fa-twitter"></i>
+                </div>
+                <span>Twitter</span>
+              </a>
+              <a href="https://www.instagram.com/" target="_blank" class="button">
+                <div class="icon">
+                  <i class="fab fa-instagram"></i>
+                </div>
+                <span>Instagram</span>
+              </a>
+              <a href="https://github.com/HarshKumarraghav" target="-blank" class="button">
+                <div class="icon">
+                  <i class="fab fa-github-alt"></i>
+                </div>
+                <span>Github</span>
+              </a>
+              <a href="mailTo: raghavharsh068@gmail.com" target="_blank" class="button">
+                <div class="icon">
+                  <i class="fa fa-envelope"></i>
+                </div>
+                <span>Mail us</span>
+              </a>
+            </div>
+          </div>
+          <div class="endtext"><p align="center">
+            Create with ❤️ by "Harsh Raghav"
+          </p>
+          <p align="center"> Ⓒ2022 Raghav inc. All rights reserved.</p></div>
+          
+        </div>
+      </section>
+    </div>
+  </div>
+  <script type="module" src="/main.js"></script>
+  <script src="https://kit.fontawesome.com/c2f2b84a76.js" crossorigin="anonymous"></script>
+</body>
+
 </html>
