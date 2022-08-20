@@ -30,7 +30,6 @@ export default class Room {
           groupChild.receiveShadow = true;
         });
       }
-      console.log(child);
     });
 
     this.width = 0.1;

@@ -191,6 +191,7 @@ svg {
   padding-bottom: 400px;
 }
 .section-heading {
+  color: var(--color-text);
   font-size: 28px;
   font-weight: 700;
   line-height: 1.8;
@@ -274,7 +275,7 @@ svg {
 
 .hero-main-title {
   font-family: BacktoSchool;
-  font-size: 70px;
+  font-size: 75px;
   text-align: center;
   animation: 2s fadeIn;
   animation-fill-mode: forwards;
@@ -439,6 +440,6 @@ width: 100%;
 
 
 .endtext{
-  margin-top: 20px;
+  margin-top: 60px;
   font-size: 15px;
 }
