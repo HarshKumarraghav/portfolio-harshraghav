@@ -25,7 +25,6 @@ export default class Control {
     this.setScrollTrigger();
   }
   setScrollTrigger() {
-    console.log(this.room);
     ScrollTrigger.matchMedia({
       // destop -------------------------------
       "(min-width: 969px)": () => {
