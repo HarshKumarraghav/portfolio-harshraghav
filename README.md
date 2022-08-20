@@ -24,3 +24,6 @@ models were built in Blender
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"><img
                   src="https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=for-the-badge&logo=JavaScript&logoColor=black"
                   width="150" height="36" alt="JavaScript" /></a>
+<a href="https://vercel.com/" target="_blank" rel="noreferrer"><img
+                src="https://img.shields.io/badge/Vercel-000000.svg?style=for-the-badge&logo=Vercel&logoColor=white"
+                width="120" height="36" alt="vercel" /></a>
