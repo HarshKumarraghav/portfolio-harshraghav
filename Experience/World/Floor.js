@@ -23,9 +23,9 @@ export default class Room {
   }
   setCircle() {
     const geometry = new THREE.CircleGeometry(5, 128);
-    const material1 = new THREE.MeshStandardMaterial({ color: "#332FD0" });
-    const material2 = new THREE.MeshStandardMaterial({ color: "#332FD0" });
-    const material3 = new THREE.MeshStandardMaterial({ color: "#332FD0" });
+    const material1 = new THREE.MeshStandardMaterial({ color: "#170055" });
+    const material2 = new THREE.MeshStandardMaterial({ color: "#170055" });
+    const material3 = new THREE.MeshStandardMaterial({ color: "#170055" });
     this.circleFirst = new THREE.Mesh(geometry, material1);
     this.circleSecond = new THREE.Mesh(geometry, material2);
     this.circleThird = new THREE.Mesh(geometry, material3);
