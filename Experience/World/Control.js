@@ -2,7 +2,7 @@ import Experience from "../Experience";
 import * as THREE from "three";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import ASScroll from '@ashthornton/asscroll'
+import ASScroll from "@ashthornton/asscroll";
 export default class Control {
   constructor() {
     this.experience = new Experience();
@@ -21,7 +21,14 @@ export default class Control {
     this.circleFirst = this.experience.world.floor.circleFirst;
     this.circleSecond = this.experience.world.floor.circleSecond;
     this.circleThird = this.experience.world.floor.circleThird;
-    this.setSmoothScroll();
+    if (
+      !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      )
+    ) {
+      this.setSmoothScroll();
+    }
+
     this.setScrollTrigger();
   }
   setScrollTrigger() {
@@ -162,59 +169,58 @@ export default class Control {
       },
 
       all: () => {
-  // destop -------------------------------
+        // destop -------------------------------
 
-    this.firstMoveTimeLine = new gsap.timeline({
-      scrollTrigger: {
-        trigger: ".first-move",
-        start: "top top",
-        bottom: "bottom bottom",
-        scrub: 0.6,
-        invalidateOnRefresh: true,
-      },
-    }).to(this.circleFirst.scale ,{
-      x:3,
-      y:3,
-      z:3,
-    })
-    this.secondMoveTimeLine = new gsap.timeline({
-      scrollTrigger: {
-        trigger: ".first-move",
-        start: "top top",
-        bottom: "bottom bottom",
-        scrub: 0.6,
-        invalidateOnRefresh: true,
-      },
-    }).to(this.circleSecond.scale ,{
-      x:3,
-      y:3,
-      z:3,
-    })
-    this.thirdMoveTimeLine = new gsap.timeline({
-      scrollTrigger: {
-        trigger: ".first-move",
-        start: "top top",
-        bottom: "bottom bottom",
-        scrub: 0.6,
-        invalidateOnRefresh: true,
-      },
-    }).to(this.circleThird.scale ,{
-      x:3,
-      y:3,
-      z:3,
-    });
-  
-    // second section -------------------------------
-    this.secondMoveTimeLine = new gsap.timeline({
-      scrollTrigger: {
-        trigger: ".second-move",
-        start: "top top",
-        bottom: "bottom bottom",
-        scrub: 0.6,
-        invalidateOnRefresh: true,
-      },
-    });
+        this.firstMoveTimeLine = new gsap.timeline({
+          scrollTrigger: {
+            trigger: ".first-move",
+            start: "top top",
+            bottom: "bottom bottom",
+            scrub: 0.6,
+            invalidateOnRefresh: true,
+          },
+        }).to(this.circleFirst.scale, {
+          x: 3,
+          y: 3,
+          z: 3,
+        });
+        this.secondMoveTimeLine = new gsap.timeline({
+          scrollTrigger: {
+            trigger: ".first-move",
+            start: "top top",
+            bottom: "bottom bottom",
+            scrub: 0.6,
+            invalidateOnRefresh: true,
+          },
+        }).to(this.circleSecond.scale, {
+          x: 3,
+          y: 3,
+          z: 3,
+        });
+        this.thirdMoveTimeLine = new gsap.timeline({
+          scrollTrigger: {
+            trigger: ".first-move",
+            start: "top top",
+            bottom: "bottom bottom",
+            scrub: 0.6,
+            invalidateOnRefresh: true,
+          },
+        }).to(this.circleThird.scale, {
+          x: 3,
+          y: 3,
+          z: 3,
+        });
 
+        // second section -------------------------------
+        this.secondMoveTimeLine = new gsap.timeline({
+          scrollTrigger: {
+            trigger: ".second-move",
+            start: "top top",
+            bottom: "bottom bottom",
+            scrub: 0.6,
+            invalidateOnRefresh: true,
+          },
+        });
 
         this.sections = document.querySelectorAll(".section");
         this.sections.forEach((section) => {
@@ -239,7 +245,7 @@ export default class Control {
                 scrub: 0.6,
               },
             });
-          }else{
+          } else {
             gsap.to(section, {
               borderTopRightRadius: 10,
               scrollTrigger: {
@@ -266,54 +272,61 @@ export default class Control {
               start: "top top",
               end: "bottom bottom",
               scrub: 0.4,
-              pin:this.progressWrapper,
-              pinSpacing: false
+              pin: this.progressWrapper,
+              pinSpacing: false,
             },
-          })
+          });
         });
       },
     });
   }
-  setSmoothScroll(){
-this.asscroll= this.setupASScroll();
+  setSmoothScroll() {
+    this.asscroll = this.setupASScroll();
   }
 
- setupASScroll() {
-  // https://github.com/ashthornton/asscroll
-  const asscroll = new ASScroll({
-    disableRaf: true });
+  setupASScroll() {
+    // https://github.com/ashthornton/asscroll
+    const asscroll = new ASScroll({
+      disableRaf: true,
+    });
 
+    gsap.ticker.add(asscroll.update);
 
-  gsap.ticker.add(asscroll.update);
+    ScrollTrigger.defaults({
+      scroller: asscroll.containerElement,
+    });
 
-  ScrollTrigger.defaults({
-    scroller: asscroll.containerElement });
+    ScrollTrigger.scrollerProxy(asscroll.containerElement, {
+      scrollTop(value) {
+        if (arguments.length) {
+          asscroll.currentPos = value;
+          return;
+        }
+        return asscroll.currentPos;
+      },
+      getBoundingClientRect() {
+        return {
+          top: 0,
+          left: 0,
+          width: window.innerWidth,
+          height: window.innerHeight,
+        };
+      },
+      fixedMarkers: true,
+    });
 
+    asscroll.on("update", ScrollTrigger.update);
+    ScrollTrigger.addEventListener("refresh", asscroll.resize);
 
-  ScrollTrigger.scrollerProxy(asscroll.containerElement, {
-    scrollTop(value) {
-      if (arguments.length) {
-        asscroll.currentPos = value;
-        return;
-      }
-      return asscroll.currentPos;
-    },
-    getBoundingClientRect() {
-      return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
-    },
-    fixedMarkers: true });
-
-
-  asscroll.on("update", ScrollTrigger.update);
-  ScrollTrigger.addEventListener("refresh", asscroll.resize);
-
-  requestAnimationFrame(() => {
-    asscroll.enable({
-      newScrollElements: document.querySelectorAll(".gsap-marker-start, .gsap-marker-end, [asscroll]") });
-
-  });
-  return asscroll;
-}
+    requestAnimationFrame(() => {
+      asscroll.enable({
+        newScrollElements: document.querySelectorAll(
+          ".gsap-marker-start, .gsap-marker-end, [asscroll]"
+        ),
+      });
+    });
+    return asscroll;
+  }
   resize() {}
   update() {}
 }
